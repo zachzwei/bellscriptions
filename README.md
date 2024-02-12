@@ -2,22 +2,65 @@
 
 A minter and protocol for inscriptions on Bells. 
 
-## Setup
+## ⚠️⚠️⚠️ Important ⚠️⚠️⚠️
+Use this wallet for inscribing only! Always inscribe from this wallet to a different address, e.g. one you created with Ordinals Wallet. 
+This wallet is not meant for storing funds or inscriptions.
+
+## Prerequisites
+
+This guide requires a bit of coding knowledge and running Ubuntu on your local machine or a rented one. To use this, you'll need to use your terminal to setup a Bellscoin node, clone this repo and install Node.js on your computer.
+
+### Setup Bellscoin node
+
+#### Get Nintondo Core Wallet
+
+On your Terminal, type the following commands:
+
+```
+cd
+wget https://github.com/Nintondo/bellscoin/releases/download/2.0.0/bells-2.0.0-x86_64-linux-gnu.tar.gz
+tar -xvzf bells-2.0.0-x86_64-linux-gnu.tar.gz
+```
+#### Run Bellscoin node
+```
+cd bells-2.0.0
+cd bin
+./bellsd -daemon
+```
+Wait for the node to fully sync.
+Check the status by typing the command `bells-cli getinfo` on the same directory.
+
+### Setup Bellscriptions
+
+#### Clone Bellscription minter
+On your Terminal, type the following commands:
+```
+cd
+git clone https://github.com/ordinals-wallet/bellscriptions.git
+```
+#### Setup minter
 
 Install dependencies:
 
-```sh
+```
 npm install
 ```
 
 Create a `.env` file with your node information:
 
+On your Terminal, type the following commands:
 ```
-NODE_RPC_URL=http://<ip>:<port>
-NODE_RPC_USER=<username>
-NODE_RPC_PASS=<password>
+touch .env
+vi .env
+```
+Copy and Paste the following into the `.env` file
+`
+NODE_RPC_URL=http://127.0.0.1:19918
+NODE_RPC_USER=z4ch
+NODE_RPC_PASS=zord
 TESTNET=false
-```
+FEE_PER_KB=3300030
+`
 
 ## Funding
 
@@ -156,12 +199,12 @@ This allows indexers to know how much data remains.
 
 ### I'm getting ECONNREFUSED errors when minting
 
-There's a problem with the node connection. Your `dogecoin.conf` file should look something like:
+There's a problem with the node connection. Your `bellscoin.conf` file should look something like:
 
 ```
-rpcuser=ape
+rpcuser=z4ch
 rpcpassword=zord
-rpcport=22555
+rpcport=19918
 server=1
 ```
 
@@ -170,7 +213,7 @@ Make sure `port` is not set to the same number as `rpcport`. Also make sure `rpc
 Your `.env file` should look like:
 
 ```
-NODE_RPC_URL=http://127.0.0.1:22555
+NODE_RPC_URL=http://127.0.0.1:19918
 NODE_RPC_USER=ape
 NODE_RPC_PASS=zord
 TESTNET=false
