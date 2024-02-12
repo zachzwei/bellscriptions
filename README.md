@@ -55,13 +55,13 @@ touch .env
 vi .env
 ```
 Copy and Paste the following into the `.env` file
-`
+```
 NODE_RPC_URL=http://127.0.0.1:19918
 NODE_RPC_USER=z4ch
 NODE_RPC_PASS=zord
 TESTNET=false
 FEE_PER_KB=3300030
-`
+```
 
 ## Funding
 
