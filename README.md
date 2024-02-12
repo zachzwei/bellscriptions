@@ -27,6 +27,23 @@ cd bells-2.0.0
 cd bin
 ./bellsd -daemon
 ```
+#### Configure node
+Create a `bells.conf` file with your node information:
+```
+cd
+cd ~/.bells
+touch bells.conf
+vi bells.conf
+```
+Copy and Paste the following into the `bells.conf` file
+```
+rpcuser=z4ch
+rpcpassword=zord
+rpcport=19918
+server=1
+listen=1
+```
+
 Wait for the node to fully sync.
 Check the status by typing the command `bells-cli getinfo` on the same directory.
 
