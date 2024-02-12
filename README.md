@@ -43,6 +43,7 @@ git clone https://github.com/ordinals-wallet/bellscriptions.git
 Install dependencies:
 
 ```
+cd bellscriptions
 npm install
 ```
 
