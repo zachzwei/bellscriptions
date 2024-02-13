@@ -47,6 +47,15 @@ listen=1
 Wait for the node to fully sync.
 Check the status by typing the command `bells-cli getinfo` on the same directory.
 
+### Install NodeJS
+
+Please head over to (https://github.com/nodesource/distributions#using-ubuntu) and follow the installation instructions.
+
+Check if they are installed by running the following commands:
+`node -v` and `npm -v`
+![image](https://github.com/zachzwei/Doginals_z4ch/assets/35627271/8cf77d41-46b8-47af-a0ae-dff566059f58)
+
+
 ### Setup Bellscriptions
 
 #### Clone Bellscription minter
