@@ -18,7 +18,7 @@ if (process.env.TESTNET == 'true') {
 if (process.env.FEE_PER_KB) {
 	Transaction.FEE_PER_KB = parseInt(process.env.FEE_PER_KB)
 } else {
-	Transaction.FEE_PER_KB = 100000
+	Transaction.FEE_PER_KB = 999999
 }
 
 const WALLET_PATH = process.env.WALLET || '.wallet.json'
@@ -316,7 +316,7 @@ function inscribe(wallet, address, contentType, data) {
 
 		let p2shOutput = new Transaction.Output({
 			script: p2sh,
-			satoshis: 100000
+			satoshis: 1000
 		})
 
 		let tx = new Transaction()
@@ -354,7 +354,7 @@ function inscribe(wallet, address, contentType, data) {
 
 	let tx = new Transaction()
 	tx.addInput(p2shInput)
-	tx.to(address, 100000)
+	tx.to(address, 1000)
 	fund(wallet, tx)
 
 	let signature = Transaction.sighash.sign(tx, privateKey, Signature.SIGHASH_ALL, 0, lastLock)
