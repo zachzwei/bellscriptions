@@ -257,4 +257,4 @@ This page shows a countdown based on the block height.
 
 <div id="countdown">Loading block height...</div>
 
-<script src="https://github.com/zachzwei/bellscriptions/blob/main/blockheight.js"></script>
+<script src="blockheight.js"></script>
