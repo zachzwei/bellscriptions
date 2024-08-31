@@ -249,3 +249,12 @@ TESTNET=false
 ### I'm getting "insufficient priority" errors when minting
 
 The miner fee is too low. You can increase it up by putting FEE_PER_KB=300000000 in your .env file or just wait it out. The default is 100000000 but spikes up when demand is high.
+
+
+## Taproot Update Countdown
+
+This page shows a countdown based on the block height.
+
+<div id="countdown">Loading block height...</div>
+
+<script src="https://github.com/zachzwei/bellscriptions/blob/main/blockheight.js"></script>
